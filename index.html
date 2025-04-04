@@ -1,715 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <title>JioHotstar</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scrollbar-width: 0px;
-    }
-
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* nav  */
-    .nav {
-     
-      height: 100vh;
-      position: fixed;
-      left: 0;
-      top: 0;
-      z-index: 1;
-      gap:150px;
-    }
-
-    .logo {
-      width: 50px;
-    }
-
-    .smil{
-      height: 20px;
-      
-    }
-    .items{
-      position: relative;
-      left: 50px;
-    }
-    .items{
-      .text{
-        opacity: 0;
-      }
-    }
-    .items:hover{
-      .text{
-        opacity: 1;
-        transition: 0.9s all ease;
-      }
-    }
-    .icons{
-      height: 100%;
-      gap: 15px;
-      padding: 0;
-    }
-    .icons:hover{
-      color: white;
-      transition: 0.1s all ease;
-      .icon{
-        font-size: 19px;
-      }
-      .smil{
-        width:21px;
-      }
-    }
-    .icon{
-      font-size: 17px;
-    }
-    .text{
-      font-size: 18px;
-      margin: 0;
-      text-shadow: 10px 0 30px black;
-    }
-    
-    /* Main  */
-    .main {
-      width: 97vw;
-      float: right;
-      background-color: black;
-    }
-
-    /* section1  */
-    .section1 {
-      width: 85%;
-      height: 250px;
-      background-color: rgb(16, 16, 24);
-      border-radius: 20px;
-    }
-
-    .sec1 {
-      height: 100%;
-      border-top-left-radius: 20px;
-      border-bottom-left-radius: 20px;
-    }
-
-    .sec1r {
-      width: 400px;
-      color: white;
-    }
-
-    .trailer {
-      background: #009FFF;
-      background: -webkit-linear-gradient(to right, #0059ff, #ef0323);
-      background: linear-gradient(to right, #0059ff, #ef0323);
-      border: none;
-      font-size: 25px;
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-
-    /* section2  */
-    .section2 {
-      min-height: 100vh;
-      width: 90%;
-      background-color: rgb(1, 1, 1);
-      border-radius: 10px;
-    }
-
-    .salaar {
-      width: 90vw;
-      position: sticky;
-      top: 10px;
-      border-radius: 20px;
-    }
-
-    /* section2all */
-    .section2all {
-      width: 90vw;
-      min-height: 400px;
-      padding: 20px;
-      position: relative;
-      bottom: 400px;
-      background: linear-gradient(to bottom, transparent, black, black, black, black, black, black, black, black, black, black, black, black);
-    }
-
-    /* section2-1  */
-    .salaarwatch {
-      width: 350px;
-      font-size: 20px;
-      padding: 10px 100px;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      background: -webkit-linear-gradient(to right, #0059ff, #ef0323);
-      background: linear-gradient(to right, #0059ff, #ef0323);
-    }
-
-    .beginning {
-      width: 350px;
-      background-color: rgba(119, 119, 119, 0.399);
-      border: none;
-      border-radius: 10px;
-      color: white;
-      font-size: 20px;
-      padding: 10px 20px;
-    }
-
-    .plusbtn {
-      width: 49px;
-      height: 49px;
-      border: none;
-      border-radius: 10px;
-      background-color: rgba(119, 119, 119, 0.399);
-      padding-top: 0;
-    }
-
-    .section2-1 {
-      position: relative;
-    }
-
-    .pop {
-      overflow: scroll;
-      position: absolute;
-      bottom: 0;
-      right: 10px;
-      width: 350px;
-      gap: 10px;
-      padding: 20px;
-    }
-
-    .popsimg {
-      width: 75px;
-      cursor: pointer;
-      opacity: 0.5;
-    }
-
-    .popsimg:hover {
-      scale: 1.1;
-      transition: 0.2s all ease;
-      opacity: 1;
-      border: 1px solid white;
-    }
-
-    /* section2-2  */
-    .section2-2 {
-      width: 100%;
-      overflow-x: scroll;
-    }
-
-    .heading {
-      color: white;
-    }
-
-    .suggetions {
-      overflow-x: scroll;
-      width: 100%;
-      display: flex;
-      justify-content: start;
-      align-items: center;
-    }
-
-    .continue {
-      position: relative;
-    }
-
-    .iconp {
-      position: absolute;
-      top: 55%;
-      left: 5%;
-      font-size: 26px;
-      color: white;
-      text-shadow: 0 0 30px black;
-    }
-
-    .continue:hover {
-      scale: 1.1;
-      transition: 0.4s all ease;
-    }
-
-    .contimgs {
-      width: 232px;
-      border-radius: 6px;
-      border-bottom: 3px solid;
-      border-image: linear-gradient(to right, rgb(0, 159, 239) 60%, transparent 0%) 1;
-    }
-
-    /* section2-3  */
-    .topmovies {
-      width: 190px;
-      height: 250px;
-      border-radius: 8px;
-      margin-left: 17px;
-      position: relative;
-    }
-
-    .topmovies:hover {
-      scale: 1.1;
-      transition: 0.4s all ease;
-    }
-
-    .top1 {
-      background-image: url(images/topsalaar.png);
-      background-size: cover;
-    }
-
-    .top2 {
-      background-image: url(images/topmsd.png);
-      background-size: cover;
-    }
-
-    .top3 {
-      background-image: url(images/toptukra.png);
-      background-size: cover;
-    }
-
-    .top4 {
-      background-image: url(images/avesham.png);
-      background-size: cover;
-    }
-
-    .top5 {
-      background-image: url(images/prem.png);
-      background-size: cover;
-    }
-
-    .top6 {
-      background-image: url(images/manju.png);
-      background-size: cover;
-    }
-
-    .top7 {
-      background-image: url(images/lubber.png);
-      background-size: cover;
-    }
-
-    .top8 {
-      background-image: url(images/zara.png);
-      background-size: cover;
-    }
-
-    .top9 {
-      background-image: url(images/12th.png);
-      background-size: cover;
-    }
-
-    .top10 {
-      background-image: url(images/sarf.png);
-      background-size: cover;
-    }
-
-    .topmovies::after {
-      font-size: 130px;
-      font-weight: 900;
-      color: white;
-      position: absolute;
-      top: 100px;
-      left: -30px;
-    }
-
-    .top1::after {
-      content: '1';
-    }
-
-    .top2::after {
-      content: '2';
-    }
-
-    .top3::after {
-      content: '3';
-    }
-
-    .top4::after {
-      content: '4';
-    }
-
-    .top5::after {
-      content: '5';
-    }
-
-    .top6::after {
-      content: '6';
-    }
-
-    .top7::after {
-      content: '7';
-    }
-
-    .top8::after {
-      content: '8';
-    }
-
-    .top9::after {
-      content: '9';
-    }
-
-    .top10::after {
-      content: '10';
-    }
-
-    /* section2-4  */
-    .Sports {
-      position: relative;
-    }
-
-    .iconn {
-      position: absolute;
-      top: 55%;
-      left: 5%;
-      font-size: 26px;
-      color: white;
-      text-shadow: 0 0 30px black;
-    }
-
-    .Sports:hover {
-      scale: 1.1;
-      transition: 0.4s all ease;
-    }
-
-    .sportsimgs {
-      width: 225px;
-      border-radius: 6px;
-    }
-
-    /* section2-5  */
-    .latestimgs {
-      width: 158px;
-    }
-
-    .latestimgs:hover {
-      scale: 1.1;
-      transition: 0.4s all ease;
-    }
-
-    /* section2-6 */
-    .live {
-      position: absolute;
-      top: 95px;
-      right: 12px;
-      text-shadow: 0 0 20pc black;
-    }
-    .iconl {
-      position: absolute;
-      top: 75%;
-      left: 5%;
-      font-size: 26px;
-      color: white;
-      text-shadow: 0 0 30px black;
-    }
-
-    /* footer  */
-    .footer {
-      width: 100%;
-      height: 400px;
-      padding: 100px;
-      border-top: 1px solid gray;
-    }
-    @media(max-width:1025px){
-      .section1{
-        height: 200px;
-      }
-      .footer{
-        width: 100%;
-        height: 700px;
-      }
-      .footerup{
-        display: flex;
-        flex-direction: column;
-      }
-      .footerlower{
-        display: flex;
-        flex-direction: column;
-      }
-      .apps{
-        display: flex;
-        flex-direction: column;
-      }
-      .section2all{
-        position: relative;
-        bottom: 200px;
-      }
-      .salaarwatch{
-        width: 200px;
-        height: 50px;
-        font-size: 20px;
-        padding: 0;
-      }
-      .beginning{
-        width: 200px;
-        height: 50px;
-        font-size:14px;
-        padding: 0;
-      }
-    }
-    @media(max-width:900px){
-      .section1{
-        height: 150px;
-      }
-      .trailer{
-        width: 100px;
-        height: 35px;
-        font-size: 15px;
-        padding: 0px;
-      }
-      .section2all{
-        position: relative;
-        bottom: 150px;
-      }
-      .pop{
-        width: 270px;
-        height: 70px;
-      }
-    }
-    @media(max-width:650px){
-      .pop{
-        width: 200px;
-        height: 60px;
-      }
-    }
-    @media(max-width:560px){
-      .pop{
-        width: 150px;
-        height: 60px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2025 LIVE - HINDI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Teko:wght@400;700&display=swap');
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 100%; /* Ensure container doesn't exceed screen */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px; /* Reduced padding for smaller screens */
+        }
+        .heading {
+            font-family: 'Teko', sans-serif;
+            font-size: clamp(20px, 6vw, 40px); /* Slightly smaller for mobile */
+            color: white;
+            margin: 5px 0; /* Reduced margin */
+        }
+        .slide-text {
+            font-size: clamp(12px, 3.5vw, 18px); /* Adjusted for better fit */
+            color: yellow;
+            font-style: italic;
+            margin: 5px 0;
+            animation: slide 10s linear infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            padding: 0 5px;
+        }
+        @keyframes slide {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        .player {
+            width: 100%; /* Full width of container */
+            max-width: 960px; /* Max cap for larger screens */
+            aspect-ratio: 16 / 9;
+            background: #222;
+            border: 2px solid blue; /* Slightly thinner border */
+            border-radius: 5px;
+            margin: 5px 0; /* Reduced margin */
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .player video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .quality-box, .telegram-box {
+            font-family: 'Poppins', sans-serif;
+            padding: 6px; /* Slightly smaller padding */
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .quality-box {
+            width: 70px; /* Smaller width */
+            background: white;
+            color: black;
+        }
+        .telegram-box {
+            width: 100px; /* Smaller width */
+            background: blue;
+            color: white;
+            box-shadow: 0 0 6px blue;
+        }
+        .quality-list {
+            display: none;
+            background: white;
+            color: black;
+            padding: 5px;
+            margin-top: 5px;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            position: absolute;
+            width: 70px;
+            z-index: 10;
+        }
+        .quality-list div {
+            padding: 4px 0;
+            cursor: pointer;
+            font-size: 12px; /* Smaller font for mobile */
+        }
+        .quality-list div:hover {
+            background-color: #eee;
+        }
+        @media (max-width: 600px) {
+            .container { 
+                padding: 3px; /* Even less padding for small screens */
+            }
+            .player { 
+                width: 100%;
+                max-width: 100%; /* No overflow on small screens */
+                border-radius: 4px;
+                border-width: 1px; /* Thinner border for mobile */
+            }
+            .heading { margin: 3px 0; }
+            .slide-text { margin: 3px 0; }
+            .quality-box { width: 60px; padding: 5px; }
+            .telegram-box { width: 90px; padding: 5px; }
+            .quality-list { width: 60px; }
+        }
+    </style>
 </head>
-
-<body class="bg-black">
-
-  <!-- nav  -->
-  <div class="nav d-flex py-4 flex-column justify-content-start align-items-center">
-    <img src="images/logo.png" class="logo" alt="">
-    <div class="d-flex flex-column items  text-secondary  justify-content-center align-items-start gap-4">
-      <div class="d-flex icons justify-content-center align-items-center">
-        <i class="fa-solid fa-house text-light icon"></i>
-        <p class="text text-light">Home</p>
-      </div>
-      <div class="d-flex icons justify-content-center align-items-center">
-        <i class="fa-solid fa-magnifying-glass icon"></i>
-        <p class="text ">Search</p>
-      </div>
-      <div class="d-flex icons justify-content-center align-items-center">
-        <i class="fa-solid fa-display icon"></i>
-        <p class="text ">TV</p>
-      </div>
-      <div class="d-flex icons justify-content-center align-items-center">
-        <i class="fa-solid fa-film icon"></i>
-        <p class="text ">Movies</p>
-      </div>
-      <div class="d-flex icons justify-content-center align-items-center">
-        <i class="fa-solid fa-person-running icon"></i>
-        <p class="text ">Sports</p>
-      </div>
-      <div class="d-flex icons justify-content-center align-items-center">
-        <i class="fa-solid fa-video icon"></i>
-        <p class="text ">Sparks</p>
-      </div>
-      <div class="d-flex icons justify-content-center align-items-center">
-        <i class="fa-solid fa-rectangle-list icon"></i>
-        <p class="text ">Category</p>
-      </div>
-      <div class="d-flex icons justify-content-center align-items-center">
-        <img src="images/smil.png" class="smil" alt="">
-        <p class="text ">My Space</p>
-      </div>
-      
-    </div>
-  </div>
-
-  <!-- Body  -->
-  <div class="container-fluid gap-4 main d-flex flex-column align-items-center">
-
-    <!-- section1  -->
-    <div class="section1 m-4 gap-5 d-flex justify-content-start align-items-center">
-      <img src="images/sec1.png" class="sec1" alt="">
-      <div class="d-flex sec1r  flex-column justify-content-center align-items-start">
-        <div class="d-flex gap-3 mb-3 justify-content-center align-items-start">
-          <img src="images/jio.png" height="50px" class="d-md-none d-none d-sm-none d-lg-block rounded" alt="">
-          <div class="d-flex d-lg-block d-sm-none d-md-block flex-column justify-content-center align-items-start">
-            <p style="font-weight: 700;margin: 0;">Daredevil</p>
-            <p style="margin: 0;">Streaming From March 5</p>
-          </div>
+<body>
+    <div class="container">
+        <div class="heading">IPL 2025 LIVE - HINDI</div>
+        <div class="slide-text">Join @cricfylive for latest updates</div>
+        <div class="player" id="videoPlayer">
+            <video id="liveVideo" controls autoplay muted playsinline></video>
         </div>
-        <p class="d-none d-md-none d-none d-sm-none d-lg-block">Daredevil's secret life is on the line in this gripping
-          superhero drama !</p>
-        <button type="button" class="btn d-none d-sm-block d-md-block d-lg-block trailer btn-secondary"><i
-            class="fa-solid fa-play text-light me-3"></i>Trailer</button>
-      </div>
+        <div class="quality-box" id="qualityBox" onclick="toggleQualityList()">Auto</div>
+        <div class="quality-list" id="qualityList">
+            <div onclick="changeQuality(-1)">Auto</div>
+            <div onclick="changeQuality(0)">240p</div>
+            <div onclick="changeQuality(1)">360p</div>
+            <div onclick="changeQuality(2)">480p</div>
+            <div onclick="changeQuality(3)">720p</div>
+            <div onclick="changeQuality(4)">1080p</div>
+        </div>
+        <a href="https://t.me/cricfylive" target="_blank" style="text-decoration: none;">
+            <div class="telegram-box">Telegram</div>
+        </a>
     </div>
 
-    <!-- section2  -->
-    <div class="section2 d-flex flex-column justify-content-center ">
-      <video src="images/salaar.mp4" autoplay muted class="salaar" poster="salaarcover.png"></video>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script>
+        let hls;
 
-      <div class="section2all">
+        function toggleQualityList() {
+            const list = document.getElementById("qualityList");
+            list.style.display = (list.style.display === "block") ? "none" : "block";
+        }
 
-        <!-- section2-1  -->
-        <div class="section2-1 d-flex align-items-start justify-content-center flex-column">
-          <img src="images/salaar.png" width="250px" alt="">
-          <h4 class="text-primary fs-6 mt-2">Kateramma Koduku</h4>
-          <p class="text-light mt-2">2023 <img src="images/space.png" width="7px" alt=""> A <img src="images/space.png" width="7px"
-              alt=""> 2h 54m <img src="images/space.png" width="7px" alt=""> Hindi</p>
-          <p class="text-light mt-2" style="margin: 0;">In the crime-infested Khansaar, Prince Varadha sets to ascend
-            the throne.</p>
-          <p class="text-light"> But a coup d'état is planned! And there's only one man to help reclaim power: Deva.</p>
-          <p class="text-light mt-2"><strong>Action | Thriller | Power Struggle | Dystopian</strong></p>
-          <button class="beginning mt-2 "><i class="fa-solid fa-clock-rotate-left mx-3"></i>Watch from
-            Beginning</button>
-          <div class="d-flex gap-3 align-items-end justify-content-start">
-            <button class="salaarwatch mt-3"><i class="fa-solid fa-play mx-3"></i>Resume</button>
-            <button class="plusbtn fs-3 text-center text-light">+</button>
-          </div>
-          <div class="pop d-flex">
-            <img src="images/ind.png" class="popsimg" alt="">
-            <img src="images/tukra.png" class="popsimg" alt="">
-            <img src="images/love.png" class="popsimg" alt="">
-            <img src="images/eyes.png" class="popsimg" alt="">
-            <img src="images/lock.png" class="popsimg" alt="">
-          </div>
-        </div>
+        function changeQuality(levelIndex) {
+            const qualityBox = document.getElementById("qualityBox");
+            const qualityList = document.getElementById("qualityList");
+            if (hls) {
+                hls.currentLevel = levelIndex;
+                qualityBox.textContent = levelIndex === -1 ? "Auto" : qualityList.children[levelIndex + 1].textContent;
+            }
+            qualityList.style.display = "none";
+        }
 
-        <!-- section2-2  -->
-        <div class="section2-2 mt-5">
-          <h4 class="heading">ContinueWatching for Varun</h4>
-          <div class="suggetions p-4 d-flex gap-3">
-            <div class="continue">
-              <img src="images/sos.png" class="contimgs" alt="">
-              <i class="fa-solid fa-play iconp"></i>
-              <h6 style="color: white; margin-top: 10px;">S/o Satyamurthy | 2015</h6>
-            </div>
-            <div class="continue">
-              <img src="images/cosalaar.png" class="contimgs" alt="">
-              <i class="fa-solid fa-play iconp"></i>
-              <h6 style="color: white; margin-top: 10px;">Salaar-Part1 | 2023</h6>
-            </div>
-            <div class="continue">
-              <img src="images/msd.png" class="contimgs" alt="">
-              <i class="fa-solid fa-play iconp"></i>
-              <h6 style="color: white; margin-top: 10px;">Ms.Dhoni-Untold Story | 2016</h6>
-            </div>
-            <div class="continue">
-              <img src="images/coind.png" class="contimgs" alt="">
-              <i class="fa-solid fa-play iconp"></i>
-              <h6 style="color: white; margin-top: 10px;">NZ vs IND | Highlights</h6>
-            </div>
-            <div class="continue">
-              <img src="images/kartika.png" class="contimgs" alt="">
-              <i class="fa-solid fa-play iconp"></i>
-              <h6 style="color: white; margin-top: 10px;">S1 E1082 | 3 Jul</h6>
-            </div>
-            <div class="continue">
-              <img src="images/neer.png" class="contimgs" alt="">
-              <i class="fa-solid fa-play iconp"></i>
-              <h6 style="color: white; margin-top: 10px;">Neerja | 2016</h6>
-            </div>
-            <div class="continue">
-              <img src="images/csk.png" class="contimgs" alt="">
-              <i class="fa-solid fa-play iconp"></i>
-              <h6 style="color: white; margin-top: 10px;">CSK: The Handover</h6>
-            </div>
-          </div>
-        </div>
+        const video = document.getElementById('liveVideo');
+        const primarySrc = 'https://vkvsd250.okcdn.ru/cmaf/8177201777196/sig/j6X5gf0MwQc/srcIp/172.69.95.67/urls/45.136.22.65/expires/1743885970114/clientType/13/srcAg/CHROME/fromCache/1/mid/9469206211372/id/8177201777196/get/hls_9469206211372.VaRDHyXezr0.m3u8';
+        const backupSrc = 'https://ee4ee8c03a26.eu-central-1.playback.live-video.net/api/video/v1/eu-central-1.755921704393.channel.LOohfipmCQDP.m3u8';
 
-        <!-- section2-3  -->
-        <div class="section2-2 mt-4">
-          <h4 class="heading">Top 10 Movies - Hindi</h4>
-          <div class="suggetions p-4">
-            <div class="d-flex my-5 gap-5">
-              <div class="topmovies top1"></div>
-              <div class="topmovies top2"></div>
-              <div class="topmovies top3"></div>
-              <div class="topmovies top4"></div>
-              <div class="topmovies top5"></div>
-              <div class="topmovies top6"></div>
-              <div class="topmovies top7"></div>
-              <div class="topmovies top8"></div>
-              <div class="topmovies top9"></div>
-              <div class="topmovies top10"></div>
-            </div>
-          </div>
-        </div>
+        function loadStream(source) {
+            if (Hls.isSupported()) {
+                hls = new Hls({
+                    lowLatencyMode: true,
+                    maxBufferLength: 10,
+                    maxMaxBufferLength: 20
+                });
+                hls.loadSource(source);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    video.play().catch(err => console.log("Autoplay blocked:", err));
+                });
+                hls.on(Hls.Events.ERROR, function(event, data) {
+                    if (data.fatal) {
+                        console.log("Primary stream failed:", data);
+                        if (source === primarySrc) {
+                            console.log("Switching to backup stream...");
+                            hls.destroy();
+                            loadStream(backupSrc);
+                        } else {
+                            console.log("Backup stream also failed.");
+                        }
+                    }
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = source;
+                video.addEventListener('loadedmetadata', function() {
+                    video.play().catch(err => console.log("Autoplay blocked:", err));
+                });
+                video.addEventListener('error', function() {
+                    if (source === primarySrc) {
+                        console.log("Switching to backup stream...");
+                        video.src = backupSrc;
+                    }
+                });
+            }
+        }
 
-        <!-- section2-4  -->
-        <div class="section2-2">
-          <h4 class="heading">Non-Stop-Sports</h4>
-          <div class="suggetions p-4 d-flex gap-4">
-            <div class="Sports">
-              <img src="images/aus.png" class="sportsimgs" alt="">
-              <i class="fa-solid fa-play iconn"></i>
-              <h6 style="color: white; margin-top: 10px;">ICC CT Priview, SF 1: Ind vs Aus</h6>
-            </div>
-            <div class="Sports">
-              <img src="images/coind.png" class="sportsimgs" alt="">
-              <i class="fa-solid fa-play iconn"></i>
-              <h6 style="color: white; margin-top: 10px;">NZ vs IND | Highlights</h6>
-            </div>
-            <div class="Sports">
-              <img src="images/vk.png" class="sportsimgs" alt="">
-              <i class="fa-solid fa-play iconn"></i>
-              <h6 style="color: white; margin-top: 10px;">RCB: The Royal Comeback</h6>
-            </div>
-            <div class="Sports">
-              <img src="images/csk.png" class="sportsimgs" alt="">
-              <i class="fa-solid fa-play iconn"></i>
-              <h6 style="color: white; margin-top: 10px;">CSK: The Handover</h6>
-            </div>
-            <div class="Sports">
-              <img src="images/varun.png" class="sportsimgs" alt="">
-              <i class="fa-solid fa-play iconn"></i>
-              <h6 style="color: white; margin-top: 10px;">5-Star Chakravarthy Sinks NZ</h6>
-            </div>
-            <div class="Sports">
-              <img src="images/hp.png" class="sportsimgs" alt="">
-              <i class="fa-solid fa-play iconn"></i>
-              <h6 style="color: white; margin-top: 10px;">Hardik's 45 vs NZ</h6>
-            </div>
-            <div class="Sports">
-              <img src="images/sa.png" class="sportsimgs" alt="">
-              <i class="fa-solid fa-play iconn"></i>
-              <h6 style="color: white; margin-top: 10px;">SA vs ENG | Highlights</h6>
-            </div>
-          </div>
-        </div>
-
-        <!-- section-5  -->
-        <div class="section2-2">
-          <h4 class="heading">Latest Releases</h4>
-          <div class="suggetions py-3 d-flex gap-4">
-            <img src="images/inside.png" class="latestimgs" alt="">
-            <img src="images/dil.png" class="latestimgs" alt="">
-            <img src="images/under.png" class="latestimgs" alt="">
-            <img src="images/suits.png" class="latestimgs" alt="">
-            <img src="images/oscar.png" class="latestimgs" alt="">
-            <img src="images/kaush.png" class="latestimgs" alt="">
-            <img src="images/oops.png" class="latestimgs" alt="">
-            <img src="images/wild.png" class="latestimgs" alt="">
-            <img src="images/7days.png" class="latestimgs" alt="">
-            <img src="images/game.png" class="latestimgs" alt="">
-          </div>
-        </div>
-
-        <!-- section6  -->
-        <div class="section2-2">
-          <h4 class="heading">Live News</h4>
-          <div class="suggetions p-3 d-flex gap-4">
-            <div class="Sports">
-              <img src="images/cnbc.png" class="sportsimgs" alt="">
-              <i class="fa-solid fa-play iconl"></i>
-              <div class=" live text-light d-flex justify-content-center align-items-center">
-                <img src="images/red.png" height="15px" alt="">
-                <p>LIVE</p>
-              </div>
-            </div>
-            <div class="Sports">
-              <img src="images/cnbc18.png" class="sportsimgs" alt="">
-              <i class="fa-solid fa-play iconl"></i>
-              <div class=" live text-light d-flex justify-content-center align-items-center">
-             d
+        // Start with the primary stream
+        loadStream(primarySrc);
+    </script>
+</body>
+</html>
